@@ -1,0 +1,97 @@
+mysql> create  table program
+    -> (
+    -> empno numeric(5),
+    -> projid varchar(5),
+    -> lastname varchar(30),
+    -> firstname varchar(30),
+    -> hiredate date,
+    -> language varchar(15),
+    -> taskno numeric(2),
+    -> privilege varchar(25)
+    -> );
+Query OK, 0 rows affected (1.66 sec)
+
+mysql> INSERT INTO program(empno,projid varchar,lastname,firstname,hiredate,language,taskno,privilege) values(201,'NPR','Gupta','Saurav','1995-01-01','VB',52,'Secret');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchar,lastname,firstname,hiredate,language,taskno,privilege) values(201,'NPR',' at line 1
+mysql> INSERT INTO program
+    -> (empno,projid,lastname,firstname,hiredate,language,taskno,privilege)
+    -> VALUES
+    -> (201,'NPR','Gupta','Saurav','1995-01-01','VB',52,'Secret');
+Query OK, 1 row affected (0.27 sec)
+
+mysql> INSERT INTO program
+    -> (empno,projid,lastname,firstname,hiredate,language,taskno,privilege)
+    -> VALUES
+    -> (390,'KCW','Ghosh','Pinky','1993-01-05','Java',11,'Top Secret');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> INSERT INTO program
+    -> (empno,projid,lastname,firstname,hiredate,language,taskno,privilege)
+    -> VALUES
+    -> (789,'Rnc','Agarwal','Praveen','1998-08-31','VB',11,'Secret');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> INSERT INTO program
+    -> (empno,projid,lastname,firstname,hiredate,language,taskno,privilege)
+    -> VALUES
+    -> (134,'TIIPS','Chaudhury','Supriyo','1995-07-15','C++',52,'Secret');
+Query OK, 1 row affected (0.16 sec)
+
+mysql> INSERT INTO program
+    -> (empno,projid,lastname,firstname,hiredate,language,taskno,privilege)
+    -> VALUES
+    -> (896,'KCW','Jha','Ranjit','1997-06-15','Java',10,'Top Secret');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> INSERT INTO program
+    -> (empno,projid,lastname,firstname,hiredate,language,taskno,privilege)
+    -> VALUES
+    -> (345,'TIIPS','John','Peter','1999-11-15','Java',52,null);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO program
+    -> (empno,projid,lastname,firstname,hiredate,language,taskno,privilege)
+    -> VALUES
+    -> (563,'NIITS','Anderson','Andy','1994-08-15','C++',89,'confidential');
+Query OK, 1 row affected (0.13 sec)
+
+
+1)  mysql> update program set  projid='NIITS',language='C++' where firstname='saurav';
+
+3)  mysql> delete from program where firstname='Supriyo'and lastname='Chaudhury';
+
+mysql> Select*from program;
++-------+--------+----------+-----------+------------+----------+--------+--------------+
+| empno | projid | lastname | firstname | hiredate   | language | taskno | privilege    |
++-------+--------+----------+-----------+------------+----------+--------+--------------+
+|   201 | NIITS  | Gupta    | Saurav    | 1995-01-01 | C++      |     52 | Secret       |
+|   390 | KCW    | Ghosh    | Pinky     | 1993-01-05 | Java     |     11 | Top Secret   |
+|   789 | Rnc    | Agarwal  | Praveen   | 1998-08-31 | VB       |     11 | Secret       |
+|   896 | KCW    | Jha      | Ranjit    | 1997-06-15 | Java     |     10 | Top Secret   |
+|   345 | TIIPS  | John     | Peter     | 1999-11-15 | Java     |     52 | NULL         |
+|   563 | NIITS  | Anderson | Andy      | 1994-08-15 | C++      |     89 | confidential |
++-------+--------+----------+-----------+------------+----------+--------+--------------+
+
+
+4)  mysql> ALTER TABLE weather ADD COLUMN nature varchar(15);
+5)  mysql> DROP TABLE weather;
+
+2)  mysql> UPDATE books SET shelfno='S10' WHERE title='DBMS';
+
+6)  mysql> Select*from customer where city='chennai';
+
+7)  mysql> Select*from customer where supplierid=2;
+
+8)  mysql> Select custid,fname,lname from customer where datefirstpurchased>'2005-01-01';
+
+9)  mysql> Select*from supplier where scity='Coimbatore';
+
+10)  mysql> Select*from supplier where sname like 'G%';  
+
+11)  mysql> Select*from orders where quantity<35;
+
+
+
+
+
+
